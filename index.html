@@ -6,38 +6,60 @@
     <title>Demo</title>
     <style type="text/css">
         .map {
-            position: absolute;
+            position: absolute !important;
             width: 100%;
             height: 100%;
         }
 
-        .map ul.list {
+        .map strong {
+            color: #2D3482;
+        }
+
+        ul.list {
             list-style: none;
             padding: 0;
             margin: 0;
             color: #2D3482;
         }
 
-        .map ul.list a {
+        ul.list a {
             position: absolute;
             right: 0;
             padding: 0 3px;
         }
 
-        .map ul.list label {
+        ul.list label {
             width: 43px;
             text-align: right;
         }
 
-        .map strong {
-            color: #2D3482;
+        ul.list.tool-tip label {
+            width: 100px;
+            font-weight: normal;
         }
     </style>
 </head>
 
 <body ng-controller="demoCtrl">
-<baidu-map options="mapOptions" ak="warfKzxekIHWdxOecMkopmNZsFP3pZVw" offline="offlineOpts"
-           on-map-loaded="mapLoaded(map)" class="map"></baidu-map>
+<div class="tooltip_templates" style="display: none">
+    <span id="tooltip_content">
+        <ul class="list tool-tip">
+            <li>
+                <label>物资总价值</label>：1亿元
+            </li>
+            <li>
+                <label>防汛物资总价值</label>：4千万元
+            </li>
+            <li>
+                <label>抗旱物资总价值</label>：3千万元
+            </li>
+            <li>
+                <label>常用物资总价值</label>：3千万元
+            </li>
+        </ul>
+    </span>
+</div>
+<baidu-map options="mapOptions" ak="warfKzxekIHWdxOecMkopmNZsFP3pZVw" offline="offlineOpts" class="map"></baidu-map>
 </body>
 
 </html>

@@ -385,6 +385,10 @@
                     });
                     previousMarker.listener = function () {
                         this.openInfoWindow(infoWindow2);
+                        if (angular.isFunction(marker.click)) {
+                            marker.click();
+                        }
+                        ;
                     };
                     marker2.addEventListener('click', previousMarker.listener);
                 });
